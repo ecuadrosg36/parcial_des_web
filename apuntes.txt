@@ -1,0 +1,41 @@
+https://github.com/luischang/install-providers-dotnet
+
+https://github.com/luischang/DPA.Store202302
+
+https://github.com/luischang/Semana04EFCoreDPA2023
+
+Para los temas que te mencionaron en la prueba sobre desarrollo web, he encontrado algunos repositorios en GitHub y otras fuentes que podrían ser útiles:
+
+#########1.Investigar una URL para Postman, revisar documentación, y luego inventariar usuario, actualizar y eliminar:
+
+En GitHub, hay un repositorio que contiene ejemplos de cómo ejecutar tests de colecciones Postman usando gradle (paquete npm newman) y también funcionalidades para recopilar todos los informes HTML en uno solo​1​.
+
+https://github.com/topics/postman-example#:~:text=This%20repository%20contains%20example%20how,html%20reports%20into%20single%20one
+
+También encontré un repositorio que muestra algunas colecciones Postman para ilustrar cómo usar los servicios web de PrestaShop​2​.
+
+https://github.com/PrestaShop/webservice-postman-examples#:~:text=This%20repository%20shows%20some%20Postman,friendly%20interface%20and%20a
+
+########2.En C# utilizamos una Web API, más scaffolder y controlador:
+
+Un repositorio llamado "WebApi.Scaffolding" en GitHub proporciona Scaffolding (T4) para ASP.NET, lo cual podría ser útil para tu propósito​3​.
+
+https://github.com/smichelotti/WebApi.Scaffolding#:~:text=1%20branch%200%20tags%20Code,built%20on%20top%20of%20T4Scaffolding
+
+En el repositorio "ASP.NET Web API Scaffolding", se ofrece un paquete de generación de código para ASP.NET que permite crear rápidamente boilerplates estándar para controladores de Web API, servicios 
+y repositorios basados en un modelo de entidad proporcionado​4​.
+
+https://github.com/smichelotti/WebApi.Scaffolding#:~:text=1%20branch%200%20tags%20Code,built%20on%20top%20of%20T4Scaffolding
+
+#########3. Web API+ Controller en blanco, para crear nuestros propios endpoints:
+
+El repositorio "webapi-sample" en GitHub parece contener ejemplos relacionados con la Web API y controladores en C#​5​.
+
+https://github.com/topics/webapi-sample#:~:text=visual,Updated%20on%20Dec%208%2C%202022
+
+El repositorio oficial de "Scaffolding" en GitHub contiene código que puede ser utilizado para generar código boilerplate para aplicaciones web, lo cual podría ser relevante para crear tus propios endpoints​6​.
+
+https://github.com/dotnet/Scaffolding#:~:text=Scaffolding,dotnet%20msidentity
+
+Estos repositorios y ejemplos podrían proporcionarte una buena base sobre la cual construir y entender mejor los temas mencionados para tu prueba. 
+Es recomendable revisar la documentación y el código fuente proporcionado en estos repositorios para familiarizarte con las prácticas y técnicas comunes utilizadas en el desarrollo web con C# y ASP.NET.
