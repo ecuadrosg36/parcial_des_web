@@ -1,0 +1,1671 @@
+
+  Semana 1  
+
+
+
+
+
+ 
+
+
+ 
+
+CONTENIDO:
+–	Presentación.
+–	Revisión del sílabo.
+–	Calificación del curso.
+–	Proyecto web.
+–	Compromiso del alumno.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Desarrollo de ambiente web – Semana 1
+INTRODUCCIÓN
+ 
+Presentación
+•	Del Docente:
+–	Presentación personal.
+
+•	Del Alumno:
+–	Nombre completo
+–	Edad
+–	Experiencia en desarrollo web
+–	Expectativas del curso
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Desarrollo de ambiente web – Semana 1
+REVISIÓN DEL SÍLABO
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Desarrollo de ambiente web – Semana 1
+CALIFICACIÓN DEL CURSO
+ 
+
+
+
+
+Promedio de Evaluación Permanente (PEP)
+ 
+Calificación del curso
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+Promedio Final
+(PF)
+ 
+
+
+EP: Examen Parcial EF: Examen Final
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Desarrollo de ambiente web – Semana 1
+PROYECTO WEB
+ 
+Proyecto web
+•	Se trabajará con tres (3) grupos.
+•	Enviar nombre del grupo e integrantes (semana 01).
+•	El tema y requisitos del proyecto se asignará a los grupos en la semana 05 por el curso de Ing. De Software.
+•	Entrega Trabajo Parcial backend API Web (semana 09).
+•	Entrega Trabajo Final frontend y backend (semana 15).
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Desarrollo de ambiente web – Semana 1
+COMPROMISO DEL ALUMNO
+ 
+Compromiso del alumno
+•	Respeto.
+•	Preguntar.
+•	Investigar.
+
+
+ 
+
+  Semana 1  
+
+
+
+
+
+
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	1
+ 
+
+
+ 
+RESULTADOS DE APRENDIZAJE:
+–	Comprende el ecosistema .NET.
+–	Comprende	sobre	la	arquitectura	de	aplicaciones	web	estáticas	y
+dinámicas.
+–	Entiende la diferencia sobre .NET Framework y .NET Core.
+–	Comprende el patrón de diseño MVC.
+–	Entiende la importancia de la programación orientada a objetos y el principio SOLID para la construcción de aplicaciones web empresariales.
+–	Comprende	la	comunicación	de	información	entre	los	diversos componentes web.
+CONTENIDO:
+1.1.	Introducción a .NET.
+1.2.	Introducción al desarrollo de aplicaciones web.
+1.3.	Páginas estáticas y dinámicas.
+1.4.	Fundamentos de HTML y CSS.
+1.5.	ASP.NET Framework.
+1.6.	ASP.NET Core.
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	2
+ 
+
+
+
+
+
+
+
+
+
+
+
+Desarrollo de ambiente web – Semana 1
+INTRODUCCIÓN A .NET
+
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	3
+ 
+Introducción a .NET
+•	Acontecimientos
+–	Anders Hejlsberg: Padre del C# (antes J++) y colaborador con Turbo Pascal, Delphi.
+–	Necesidad de mejorar Visual Studio
+ 
+6 (1998).
+–	Respuesta de Microsoft sobre Sun Microsystems.
+–	Lanzamiento Febrero 2002: Visual
+Studio .NET.
+–	.NET Framework 1.0
+ 
+Anders Hejlsberg
+ 
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	4
+ 
+.NET Mitos y Verdades
+•	¿Qué NO es .NET?
+ 
+–	Un sistema operativo.
+–	Un lenguaje de programación.
+–	Un entorno de desarrollo(IDE’s)
+•	¿Qué SI es .NET?
+–	Un entorno de ejecución administrado.
+–	Un conjunto de lenguajes de programación.
+–	Un conjunto de bibliotecas y clases reutilizables.
+ 
+“.NET es un estándar de ECMA que tiene distintas implementaciones:
+.NET Framework,
+Mono, Unity y, ahora,
+.NET Core.”
+ 
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	5
+ 
+.NET Framework
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	6
+ 
+Timeline .NET
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2022
+
+.NET 6	.NET Framework 4.8
+
+
+ 
+
+Ïuente: Micíosoft 2021
+ 
+7
+MBA, Luis Chang - lchangu@esan.edu.pe
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8
+MBA, Luis Chang - lchangu@esan.edu.pe
+ 
+.NET Framework & .NET Core
+•	.NET Framework: Es un framework para desarrollar aplicaciones para Windows (desktop, mobile, services), Nivel del madurez: Alta.
+•	.NET Core: Entorno de ejecución Cross- Platform. Nivel del madurez: media-alta.
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	9
+ 
+¿Cuando utilizar .NET Core?
+•	.NET Framework: Es un framework para desarrollar aplicaciones para Windows (desktop, mobile, services), Nivel de madurez: Alta.
+•	.NET Core: Entorno de ejecución Cross-Platform. Nivel de madurez: Media-Alta.
+¿Cuando utilizar .NET Core?
+
+Recomendable Utilizar .NET CORE cuando:
+•	Nuevos proyectos.
+•	Cross-Platform.
+•	Arquitectura basada en microservicios.
+•	Escalable y con altas exigencias de rendimiento.
+NO recomendable Utilizar .NET CORE cuando
+•	Migración de aplicaciones actuales.
+•	Dependencia de Entity Framework, Windows Communication Foundation,
+Workflow Foundation.
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	10
+ 
+.NET Framework Overview
+
+
+
+FCL
+(Framework Class
+Library)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+Fuente: Peter Egli 2015
+ 
+CLR
+(Common Language
+Runtime)
+ 
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	11
+ 
+.NET Framework Overview
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	12
+ 
+Common Language Runtime (CLR)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+Fuente: InfoSec Institute
+ 
+MBA, Luis Chang - lchangu@esan.edu.pe	13
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Desarrollo de ambiente web – Semana 1
+INTRODUCCIÓN AL DESARROLLO DE APLICACIONES WEB
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	14
+ 
+Tendencias sobre el desarrollo de
+software
+ 
+
+ 
+Fuente: Stack Overflow Developer Survey Results 2019
+MBA, Luis Chang - lchangu@esan.edu.pe
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+90,000 re1s5ponses;
+ 
+Tendencias sobre el desarrollo de
+software
+
+
+
+
+ 
+Fuente: Stack Overflow Developer Survey Results 2020
+MBA, Luis Chang - lchangu@esan.edu.pe
+ 
+90,000 re1s6ponses;
+ 
+Tendencias sobre el desarrollo de
+software
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+Fuente: Stack Overflow Developer Survey Results 2022
+MBA, Luis Chang - lchangu@esan.edu.pe
+ 
+61,302 re1s7ponses;
+ 
+World Wide Web - History
+
+
+
+ 
+•	Creada en 1989 por Tim Berners.
+•	Basado en hipertextos.
+•	Hyper Text Markup Language.
+•	Hyper Text Transfer Protocol.
+•	Uniform Resource Locator/ Identifier
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Fuente: Web Foundation Org.
+ 
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	18
+ 
+Web Page – Request/Response
+
+MBA, Luis Chang - lchangu@esan.edu.pe	19
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Desarrollo de ambiente web – Semana 1
+PÁGINAS WEB ESTÁTICAS Y DINÁMICAS
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	20
+ 
+Estándares Web
+•	Componentes básicos: HTML, CSS y JavaScript.
+•	HTML: Hyper Text Markup Language, es un lenguaje de ETIQUETAS utilizado en la capa de presentación de las páginas web.
+•	CSS: Cascading Style Sheets, es un lenguaje para definir el “estilo” de la capa de presentación. Describe como debe ser renderizado el elemento estructurado en pantalla.
+•	JavaScript: Es un lenguaje de programación multiplataforma y orientado a objetos, no requiere compilación, funciona del lado del cliente y JS le permite agregar interactividad y características dinámicas a su sitio web, pero tiene limitaciones, lo que nos lleva a los lenguajes de programación del servidor y a las páginas web dinámicas.
+
+MBA, Luis Chang - lchangu@esan.edu.pe	21
+ 
+Páginas web estáticas
+•	Diseñadas para mostrar información permanente.
+•	De uso informativo.
+•	No se utilizan Base de Datos.
+•	Interactúan	por	medio hipervínculos o enlaces.
+•	Ventajas económicas.
+•	Fácil implementación.
+•	Edición manual.
+•	Enfocados a proyectos pequeños.
+MBA, Luis Chang - lchangu@esan.edu.pe	22
+ 
+Páginas web dinámicas
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	23
+ 
+
+
+
+
+
+
+
+
+
+
+
+Desarrollo de ambiente web – Semana 2
+FUNDAMENTOS DE HTML Y CSS
+
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	24
+ 
+Recursos necesarios
+
+
+
+
+
+https://www.w3schools.com/html/html_exercises.asp https://learngitbranching.js.org/ https://sqlzoo.net/wiki/SQL_Tutorial
+MBA, Luis Chang - lchangu@esan.edu.pe	25
+ 
+
+
+
+
+
+
+
+
+
+
+
+Desarrollo de ambiente web – Semana 1
+ASP.NET FRAMEWORK
+
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	26
+ 
+.NET FRAMEWORK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	27
+ 
+Active Server Page .NET
+“Es un modelo de desarrollo Web unificado que incluye los servicios necesarios para crear aplicaciones Web empresariales con el código mínimo. El código de las aplicaciones puede escribirse en cualquier lenguaje compatible con el Common Language Runtime (CLR), entre ellos Microsoft Visual Basic, C#, JScript .NET y J#”.
+
+Fuente: MSDN – ASP.NET
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	28
+ 
+ASP.NET: Web Forms & MVC
+
+
+
+
+Fuente: Kemal Durand	Fuente: CodeProject: Web Forms vs MVC
+MBA, Luis Chang - lchangu@esan.edu.pe	29
+ 
+
+
+
+
+
+
+
+
+
+
+
+Desarrollo de ambiente web – Semana 1
+ASP.NET CORE
+
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	30
+ 
+Overview .NET Core
+
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	31
+ 
+Overview .NET Core
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	32
+ 
+Referencias
+
+
+•	Price,M. (2020). C# 9 and .NET 5 - Modern Cross-Platform Development.
+Birmingham: Packt Publishing Ltd. Chapter 1 Pages 8 – 17
+•	Frain, B. (2020). Responsive Web Design with HTML5 and CSS.
+Birmingham: Packt Publishing Ltd. Chapter 2 Pages 25 - 53
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	33
+ 
+  Semana 3  
+
+
+
+
+
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	1
+ 
+
+
+ 
+RESULTADOS DE APRENDIZAJE:
+–	Comprende el ecosistema .NET.
+–	Comprende	sobre	la	arquitectura	de	aplicaciones	web	estáticas	y
+dinámicas.
+–	Entiende la diferencia sobre .NET Framework y .NET Core.
+–	Comprende el patrón de diseño MVC.
+–	Entiende la importancia de la programación orientada a objetos y el principio SOLID para la construcción de aplicaciones web empresariales.
+–	Comprende	la	comunicación	de	información	entre	los	diversos componentes web.
+CONTENIDO:
+1.10.	REST API.
+1.11.	HTTP Headers.
+1.12.	HTTP Request Methods.
+1.13.	Http Status Code.
+1.14.	Access Control Http.
+1.15.	Postman.
+1.16.	Pruebas de endpoints con Postman.
+
+MBA, Luis Chang - lchangu@esan.edu.pe	2
+ 
+
+
+
+
+
+
+
+
+
+
+
+Desarrollo de ambiente web – Semana 3
+REST API
+
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	3
+ 
+API
+•	Application Programming Interface
+–	Es un conjunto de productos y servicios tecnológicos que permiten comunicarse a través de internet.
+–	Es un conjunto de reglas, protocolos y herramientas para construir aplicaciones de software.
+–	Permite integrar diferentes aplicaciones web, móviles, automatizar procesos de negocios, extraer datos de diferentes sistemas o construir integraciones entre diferentes aplicaciones sin importar el lenguaje de programación utilizado.
+
+MBA, Luis Chang - lchangu@esan.edu.pe	4
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	5
+ 
+REST
+•	Representational State Transfer
+–	Es un estilo arquitectónico utilizado en el desarrollo de aplicaciones web que se comunican a través de internet.
+–	Se basa en el protocolo HTTP y utiliza
+verbos como: GET, POST, PUT y DELETE.
+–	Los recursos se identifican mediante una
+URL y se pueden acceder a través de HTTP.
+–	Las respuestas suelen ser en formato JSON
+o XML.
+–	Promueve la interoperabilidad y escalabilidad de las aplicaciones web sin conocer detalles internos de cada uno
+
+MBA, Luis Chang - lchangu@esan.edu.pe	6
+ 
+REST API
+•	Se refiere a una API que se adhiere a las restricciones y principios del diseño arquitectónico REST.
+•	Utiliza los verbos HTTP (GET, POST, PUT, DELETE) para realizar operaciones en los recursos identificados por URLs y devuelve las respuestas en formato JSON o XML.
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	7
+ 
+
+
+
+
+
+
+
+
+
+
+
+Desarrollo de ambiente web – Semana 3
+HTTP HEADERS
+
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	8
+ 
+HTTP Headers
+•	Son campos adicionales que se envían junto con una solicitud o respuesta HTTP.
+•	Se dividen en dos categorías principales:
+–	Request headers
+–	Response headers
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	9
+ 
+HTTP Headers
+•	User-Agent: identifica el tipo de agente de usuario (navegador web, robot web, etc.) que está haciendo la solicitud.
+•	Accept: indica los tipos de contenido que el cliente está dispuesto a aceptar. Por ejemplo, "text/html" para contenido HTML o "application/json" para contenido JSON.
+•	Authorization: proporciona credenciales de autenticación para acceder a recursos protegidos en el servidor.
+•	Cookie: incluye una o más cookies almacenadas previamente en el cliente, que se utilizarán para realizar un seguimiento de la sesión.
+•	Content-Type: indica el tipo de contenido de la solicitud. Por ejemplo, "application/json" para datos en formato JSON.
+MBA, Luis Chang - lchangu@esan.edu.pe	10
+ 
+
+
+
+
+
+
+
+
+
+
+
+Desarrollo de ambiente web – Semana 3
+HTTP REQUEST METHODS
+
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	11
+ 
+HTTP Request Methods
+Son verbos que se utilizan en una solicitud HTTP para indicar la acción que se desea realizar
+•	GET: solicita una representación del recurso identificado por la URL. El servidor devuelve el contenido del recurso en la respuesta.
+•	POST: envía datos al servidor para crear un nuevo recurso. El contenido de la solicitud se incluye en el cuerpo de la solicitud y el servidor devuelve una respuesta que puede incluir información sobre el recurso recién creado.
+•	PUT: actualiza o reemplaza completamente un recurso identificado por la URL. El contenido de la solicitud se incluye en el cuerpo de la solicitud y el servidor devuelve una respuesta que puede incluir información sobre el recurso actualizado.
+•	DELETE: elimina el recurso identificado por la URL. El servidor devuelve una respuesta que puede incluir información sobre la eliminación del recurso.
+•	HEAD: solicita información sobre el recurso identificado por la URL, pero no solicita su contenido. El servidor devuelve una respuesta que incluye los headers de la respuesta, pero sin el contenido del recurso.
+•	OPTIONS: solicita información sobre los métodos de solicitud HTTP permitidos en la URL. El servidor devuelve una respuesta que incluye los métodos permitidos y otros headers de información.
+•	PATCH: actualiza parcialmente el recurso identificado por la URL. El contenido de la solicitud se incluye en el cuerpo de la solicitud y el servidor devuelve una respuesta que puede incluir información sobre el recurso actualizado.
+MBA, Luis Chang - lchangu@esan.edu.pe	12
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Desarrollo de ambiente web – Semana 3
+HTTP STATUS CODE
+
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	13
+ 
+HTTP Status Code
+Con cada solicitud realizada al servidor, se obtiene códigos de respuesta o estado
+•	Los códigos   de   estado   se   dividen   en   5
+principales categorías:
+–	1xx (Respuestas informativas): Indica que la solicitud se ha recibido y se está procesando.
+–	2xx (Respuestas satisfactorias): Indica que la solicitud se ha procesado correctamente y se ha completado con éxito.
+–	3xx (Redirecciones): Indica que el cliente debe realizar más acciones para completar la solicitud.
+–	4xx (Errores del cliente): Indica que la solicitud del cliente no se pudo procesar debido a un error en la solicitud.
+–	5xx (Errores del servidor): Indica que la solicitud del cliente no se pudo procesar debido a un error en el servidor.
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	14
+ 
+HTTP Status Code
+
+•	Algunos códigos de estado HTTP más comunes:
+–	200 OK: la solicitud se ha procesado correctamente y se
+ha completado con éxito.
+–	201 Created: la solicitud se ha procesado correctamente y se ha creado un nuevo recurso.
+–	400 Bad Request: la solicitud del cliente no se pudo procesar debido a un error en la solicitud.
+–	401 Unauthorized: la solicitud del cliente no se pudo procesar porque el cliente no está autorizado a acceder al recurso.
+–	403 Forbidden: la solicitud del cliente no se pudo procesar porque el servidor se niega a permitir el acceso al recurso.
+–	404 Not Found: la solicitud del cliente no se pudo procesar porque el servidor no pudo encontrar el recurso solicitado.
+–	500 Internal Server Error: la solicitud del cliente no se
+pudo procesar debido a un error en el servidor.
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	15
+ 
+
+
+
+
+
+
+
+
+
+
+
+Desarrollo de ambiente web – Semana 3
+HTTP ACCESS CONTROL
+
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	16
+ 
+HTTP Access Control
+•	Es un mecanismo que permite a los servidores web controlar el acceso a sus recursos por parte de los clientes a través de solicitudes HTTP.
+•	Proporciona seguridad y protección contra el acceso no autorizado a recursos protegidos.
+
+
+
+
+
+
+17
+ 
+Cross-Origin Resource Sharing (CORS)
+
+•	Permite a los servidores web indicar a los navegadores web si se permite que una solicitud de recursos se realice desde un origen diferente al del recurso solicitado.
+
+MBA, Luis Chang - lchangu@esan.edu.pe	18
+ 
+
+
+
+
+
+
+
+
+
+
+
+Desarrollo de ambiente web – Semana 3
+POSTMAN
+
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	19
+ 
+POSTMAN
+•	Es una herramienta de prueba de API que permite a los desarrolladores	probar, documentar y compartir las API de sus aplicaciones de una manera fácil y eficiente.
+•	Cuenta con la capacidad de agregar parámetros, cabeceras y cuerpo a las solicitudes HTTP, la opción de enviar solicitudes a diferentes entornos de API.
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	20
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Desarrollo de ambiente web – Semana 3
+PRUEBAS CON POSTMAN
+
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	21
+ 
+Pruebas con POSTMAN
+
+ 
+MBA, Luis Chang - lchangu@esan.edu.pe	22
+ 
+Referencias
+
+
+•	Gaitatzis, T. (2019). Learn REST APIs: Your guide to how to find, learn, and connect to the REST APIs that powers the Internet of Things revolution. BackupBrain Press. Chapter 1 Pages 5-9 Chapter 2 Pages 13-21 Chapter 3 29-33 Chapter 4 43-69
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	23
+ 
+  Semana 4  
+
+
+
+
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	1
+ 
+ 
+RESULTADOS DE APRENDIZAJE:
+–	Comprende el ecosistema .NET.
+–	Entiende la diferencia sobre .NET Framework y .NET Core.
+–	Comprende sobre la comunicación entre un proyecto web y la base de datos.
+–	Entiende sobre la importancia de utilizar un ORM.
+–	Comprende y desarrolla los enfoques de Entity Framework Core.
+–	Manipula objetos de base de datos mediante Entity Framework Core.
+–	Entiende la importancia de la programación orientada a objetos y el principio SOLID para la construcción de aplicaciones web empresariales.
+–	Construye aplicaciones backend con ASP.NET Core Web API.
+–	Comprende la importancia de los enfoques de Entity Framework Core (Code First y Database First).
+–	Construye aplicaciones sobre arquitectura limpia (Clean Arquitecture).
+–	Entiende la importancia de documentar las APIs.
+–	Entiende la importancia de un middleware en una aplicación web.
+–	Entiende el uso de procedimientos almacenados en una aplicación web.
+–	La capacidad de aplicar conocimientos de matemáticas, ciencias e ingeniería en la solución de problemas complejos de ingeniería.
+–	La capacidad de identificar, formular, buscar información y analizar problemas complejos de ingeniería para llegar a conclusiones fundamentadas usando principios básicos de matemáticas, ciencias naturales y ciencias de la ingeniería.
+–	La capacidad de comunicarse eficazmente, mediante la comprensión y redacción de informes y documentación de diseño, la realización de exposiciones, y la transmisión y recepción de instrucciones claras.
+–	La capacidad de comprender y evaluar el impacto de las soluciones a problemas complejos de ingeniería en un contexto global, económico,
+ambiental y social.
+–	La capacidad de aplicar el razonamiento informado mediante el conocimiento contextual para evaluar cuestiones sociales, de salud, de seguridad, legales y culturales y las consecuentes responsabilidades relevantes para la práctica profesional de la ingeniería.
+CONTENIDO:
+2.1.	Comprende sobre .NET
+2.2.	¿Qué es un ORM?
+2.3.	Principios SOLID
+2.4.	Patrones de diseño
+2.5.	Entity Framework Core – Enfoques.
+2.6.	Expresiones lambda y LINQ.
+
+MBA, Luis Chang - lchangu@esan.edu.pe	2
+ 
+
+
+
+
+
+
+
+
+
+
+
+Desarrollo de ambiente web – Semana 4
+COMPRENDE SOBRE .NET Y ADO NET
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	3
+ 
+ADO.NET
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	4
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Desarrollo de ambiente web – Semana 4
+¿QUÉ ES UN ORM?
+
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	5
+ 
+Object Relational Mapping
+
+
+•	Es un mecanismo que permite abordar, acceder y manipular objetos (Mapeo) sin tener que considerar cómo los objetos se relacionan con sus fuentes de datos.
+•	Permite crear una base de datos orientada a objetos “virtual” (Persistencia), sobre una base de datos relacional.
+•	Se considera una capa intermedia entre la base de datos y los objetos de la base de datos.
+•	¿Por qué trabajar con un ORM?: Abstracción de la base de datos, POO, seguridad.
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	6
+ 
+Object Relational Mapping
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	7
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	8
+ 
+
+
+
+
+
+
+
+
+
+
+
+Desarrollo de ambiente web – Semana 4
+PRINCIPIOS SOLID
+
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	9
+ 
+Programación Orientada a Objetos: Pilares
+
+
+public class Customer
+{
+// Fields, properties, methods and events go here…
+}	Pilaíes de la POO
+•	Abstíacción
+ 
+Customer object1 = new Customer();
+public class Manager : Employee
+
+{
+ 
+•	Encapsulamiento.
+•	Heíencia.
+•	Polimoífismo.
+ 
+// Employee fields, properties, methods and events
+are inherited
+// New Manager fields, properties, methods and
+events go here…
+}
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	10
+ 
+Principios SOLID
+
+•	S:	Single	responsibility	principle	o	Principio	de responsabilidad única. Keyword: “Decoupled”
+•	O:	Open/closed	principle	o	Principio	de	abierto/cerrado. Keyword: “Abstraction”
+•	L: Liskov substitution principle o Principio de sustitución de Liskov. Keyword: “Replaceable”
+•	I: Interface segregation principle o Principio de segregación de la interfaz. Keyword: “Segregate Interfaces”.
+•	D: Dependency inversion principle o Principio de inversión de dependencia. Keyword: “Dependency”.
+
+
+
+
+
+
+
+ 
+Ïuente: Enmilocalfunciona.io
+ 
+MBA, Luis Chang - lchangu@esan.edu.pe	11
+ 
+
+
+
+
+
+
+
+
+
+
+
+Desarrollo de ambiente web – Semana 4
+PATRONES DE DISEÑO
+
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	12
+ 
+Patrones de diseño
+ 
+•	Los patrones de diseño son soluciones habituales a problemas que ocurren con frecuencia en el diseño de software. Son como planos prefabricados que se pueden personalizar para resolver un problema de diseño recurrente en tu código.
+ 
+
+
+
+
+¿En qué consiste el patrón?
+•	El propósito del patrón explica brevemente el problema y la solución.
+•	La motivación explica en más detalle el problema y la solución que brinda el patrón.
+•	La estructura de las clases muestra cada una de las partes del patrón y el modo en que se relacionan.
+•	El ejemplo de código en uno de los lenguajes de programación populares facilita la asimilación de la idea que se esconde tras el patrón.
+ 
+
+MBA, Luis Chang - lchangu@esan.edu.pe	13
+ 
+
+
+
+
+
+
+
+
+
+
+
+Desarrollo de ambiente web – Semana 4
+ENTITY FRAMEWORK CORE - ENFOQUES
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	14
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	15
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Desarrollo de ambiente web – Semana 4
+EXPRESIONES LAMBDA Y LINQ
+
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	16
+ 
+ 
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	17
+ 
+Referencias
+
+
+•	Price, M. J. (2022). C# 11 and .NET 7 – Modern Cross-Platform Development Fundamentals: Start building websites and services with ASP.NET Core 7, Blazor, and EF Core 7, 7th Edition. Packt Publishing. Chapter 1 Pages 10-24 Chapter 10 425-438 Chapter 10 433-486 Chapter 11 Pages 489-517
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MBA, Luis Chang - lchangu@esan.edu.pe	18
