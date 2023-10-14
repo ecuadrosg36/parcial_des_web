@@ -39,3 +39,5 @@ https://github.com/dotnet/Scaffolding#:~:text=Scaffolding,dotnet%20msidentity
 
 Estos repositorios y ejemplos podrían proporcionarte una buena base sobre la cual construir y entender mejor los temas mencionados para tu prueba. 
 Es recomendable revisar la documentación y el código fuente proporcionado en estos repositorios para familiarizarte con las prácticas y técnicas comunes utilizadas en el desarrollo web con C# y ASP.NET.
+################
+https://github.com/Jebr25/Proyecto.AutoCareManager
