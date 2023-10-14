@@ -1,0 +1,161 @@
+INSERT INTO [dbo].[tb_usuario] VALUES ('admin@autocaremanager.com','12345678','administrador','Luis Carlos','Gonzales Ramos', 'A')
+INSERT INTO [dbo].[tb_usuario] VALUES ('jlinares@autocaremanager.com','12345678','jlinares','Jeber Joel','Linares Cruz', 'E')
+INSERT INTO [dbo].[tb_usuario] VALUES ('prueba@gmail.com','12345678','prueba','prueba','prueba', 'C')
+GO
+
+INSERT INTO [tb_taller] VALUES 
+('TALLER VES', 'Av. San Genaro 123', 'Lima', 'Perú'),
+('TALLER VES', 'Av. Los Heros 456', 'Lima', 'Perú')
+GO
+
+INSERT INTO [dbo].[tb_empleado] VALUES ('Luis Carlos','Gonzales Ramos','42105743','Propietario','A',1,1)
+INSERT INTO [dbo].[tb_empleado] VALUES ('Jeber Joel','Linares Cruz','43256987','Sistemas','A',1,2)
+INSERT INTO [dbo].[tb_empleado] VALUES ('Juan Jose','Olivares Marquez','42103658','Mecanico','A', 1, NULL)
+GO
+
+INSERT INTO [dbo].[tb_articulo] VALUES ('Aceite Shell Helix', 'A', 'N', 'LTR', 'SHELL', 'IGV18', 'A')
+INSERT INTO [dbo].[tb_articulo] VALUES ('Filtro de aire Daruma','A', 'N', 'UND', 'DARUMA', 'IGV18', 'A')
+INSERT INTO [dbo].[tb_articulo] VALUES ('Servicio de Reparación', 'S', 'R', 'ZZ', '', 'IGV18', 'A')
+INSERT INTO [dbo].[tb_articulo] VALUES ('Servicio de Mantenimiento', 'S', 'M', 'ZZ', '', 'IGV18', 'A')
+GO
+
+INSERT INTO [tb_articulo_taller] VALUES 
+(1, 1, 1000),
+(1, 2, 1000),
+(2, 1, 1000),
+(2, 2, 1000)
+GO
+
+INSERT INTO [dbo].[tb_socio_de_negocio] VALUES ('Cliente Prueba 1','203658745213','prueba','12345678','prueba1@gmail', 'Av Las Palmas 123', 'A', 3)
+INSERT INTO [dbo].[tb_socio_de_negocio] VALUES ('Cliente Prueba 2','203658745213','prueba','91011121','prueba2@gmail', 'Av Las Palmas 456', 'A', NULL)
+GO
+
+INSERT INTO [dbo].[tb_vehiculo] VALUES ('A1A-123','Toyota','Supra','1998','20231010', 1)
+INSERT INTO [dbo].[tb_vehiculo] VALUES ('B2B-456','Nissan','Sentra','2005','20231010', 1)
+INSERT INTO [dbo].[tb_vehiculo] VALUES ('A1A-123','Toyota','Supra','1998','20231010', 2)
+INSERT INTO [dbo].[tb_vehiculo] VALUES ('B2B-456','Nissan','Sentra','2005','20231010', 2)
+GO
+
+INSERT INTO [dbo].[tb_actServicio] VALUES ('20231010','20231010',1,'Se viene reparando el filtro de aire','E')
+INSERT INTO [dbo].[tb_actServicio] VALUES ('20231010','20231010',3,'Se realizo el mantenimiento del vehiculo','T')
+GO
+
+INSERT INTO [dbo].[tb_factVenta_cab] VALUES (1,'20231010','20231010','20231010','Contado','SOL','F001','344','',2360.6136,3,1)
+INSERT INTO [dbo].[tb_factVenta_cab] VALUES (2,'20231010','20231010','20231010','','SOL','F001','345','Pendiente la cobranza parcial',590.413,3,2)
+GO
+
+INSERT INTO [dbo].[tb_factVenta_det] VALUES (1,0,3,1,1000,1180)
+INSERT INTO [dbo].[tb_factVenta_det] VALUES (1,1,1,2,500,590)
+INSERT INTO [dbo].[tb_factVenta_det] VALUES (1,2,2,2,500,590.6136)
+INSERT INTO [dbo].[tb_factVenta_det] VALUES (2,0,4,1,500.35,590.413)
+GO
+
+/*
+
+SELECT TOP (1000) [USER_CODE]
+      ,[Email]
+      ,[PASSWORD]
+      ,[FirmaUsuario]
+      ,[Nombres]
+      ,[Apellidos]
+      ,[TipoUsuario]
+  FROM [AUTOCAREMANAGER].[dbo].[tb_usuario]
+  GO
+
+  SELECT TOP (1000) [CodTaller]
+      ,[DesTaller]
+      ,[Direccion]
+      ,[Ciudad]
+      ,[País]
+  FROM [AUTOCAREMANAGER].[dbo].[tb_taller]
+  GO
+
+  SELECT TOP (1000) [CodEmpleado]
+      ,[Nombres]
+      ,[Apellidos]
+      ,[NumIdent]
+      ,[Cargo]
+      ,[Estado]
+      ,[CodTaller]
+      ,[USER_CODE]
+  FROM [AUTOCAREMANAGER].[dbo].[tb_empleado]
+  GO
+
+  SELECT TOP (1000) [CodSN]
+      ,[RazonSocial]
+      ,[NumIdent]
+      ,[PersonaContacto]
+      ,[Telefono]
+      ,[Email]
+      ,[Direccion]
+      ,[Estado]
+      ,[USER_CODE]
+  FROM [AUTOCAREMANAGER].[dbo].[tb_socio_de_negocio]
+  GO
+
+  SELECT TOP (1000) [CodArticulo]
+      ,[DesArticulo]
+      ,[ArtInventariable]
+      ,[TipoServicio]
+      ,[UnidadMedida]
+      ,[Fabricante]
+      ,[ImpVenta]
+      ,[Estado]
+  FROM [AUTOCAREMANAGER].[dbo].[tb_articulo]
+  GO
+
+  SELECT TOP (1000) [CodArticulo]
+      ,[CodTaller]
+      ,[Stock]
+  FROM [AUTOCAREMANAGER].[dbo].[tb_articulo_taller]
+  GO
+  
+  SELECT TOP (1000) [CodVehiculo]
+      ,[Placa]
+      ,[Marca]
+      ,[Modelo]
+      ,[FecModelo]
+      ,[FecUltMant]
+      ,[CodSN]
+  FROM [AUTOCAREMANAGER].[dbo].[tb_vehiculo]
+  
+ SELECT TOP (1000) [ActID]
+      ,[FecInicio]
+      ,[FecFin]
+      ,[CodVehiculo]
+      ,[DetalleReparacion]
+      ,[Estado]
+  FROM [AUTOCAREMANAGER].[dbo].[tb_actServicio]
+   
+ SELECT TOP (1000) [DocID]
+      ,[CodSN]
+      ,[FecDocumento]
+      ,[FecVencimiento]
+      ,[ProxFecMant]
+      ,[CondicionPago]
+      ,[Moneda]
+      ,[NumSerieFiscal]
+      ,[NumCorrelativo]
+      ,[Comentarios]
+      ,[DocTotal]
+      ,[CodEmpleado]
+      ,[ActID]
+  FROM [AUTOCAREMANAGER].[dbo].[tb_factVenta_cab]  
+
+SELECT TOP (1000) [DocID]
+      ,[NumLinea]
+      ,[CodArticulo]
+      ,[DesArticulo]
+      ,[Cantidad]
+      ,[Precio]
+      ,[Subtotal]
+  FROM [AUTOCAREMANAGER].[dbo].[tb_factVenta_det]
+   
+*/
+  
+/*
+
+DELETE FROM [tb_factVenta_cab]  
+DELETE FROM [tb_factVenta_det] 
+
+*/

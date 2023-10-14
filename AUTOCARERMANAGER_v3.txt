@@ -1,0 +1,156 @@
+--CREACIÓN DE LA BASE DE DATOS AUTOCAREMANAGER
+CREATE DATABASE AUTOCAREMANAGER
+GO
+
+--CONEXION A LA BASE DE DATOS
+USE AUTOCAREMANAGER
+GO
+
+/**-----------------------------------DATOS MAESTROS-----------------------------------**/
+
+CREATE TABLE [tb_usuario]
+( 
+	[USER_CODE]         int				IDENTITY(1,1) NOT NULL, 
+	[Email]				nvarchar(100)   NOT NULL, -- admin@autocaremanager.com // wramos@autocaremanager.com 
+	[PASSWORD]			nvarchar(254)	NOT NULL,
+	[FirmaUsuario]		nvarchar(100)	NOT NULL,
+	[Nombres]			nvarchar(100)	NOT NULL,
+	[Apellidos]			nvarchar(100)	NOT NULL,
+	[TipoUsuario]		nvarchar(1)		NOT NULL, -- A Administrador - E Empleado - C Cliente
+	PRIMARY KEY([USER_CODE])
+)
+GO
+
+CREATE TABLE [tb_taller]
+( 
+	[CodTaller]			int				IDENTITY(1,1) NOT NULL,
+	[DesTaller]			nvarchar(200)	NOT NULL,
+	[Direccion]			nvarchar(254)	,
+	[Ciudad]			nvarchar(254)	,
+	[País]				nvarchar(254)	,
+	PRIMARY KEY([CodTaller])
+)
+GO
+
+CREATE TABLE [tb_empleado]
+( 
+	[CodEmpleado]       int				IDENTITY(1,1) NOT NULL,
+	[Nombres]			nvarchar(100)	NOT NULL,
+	[Apellidos]			nvarchar(100)	NOT NULL,
+	[NumIdent]			nvarchar(32)    NOT NULL,
+	[Cargo]				nvarchar(100)	,
+	[Estado]			nvarchar(1)     NOT NULL, --A Activo - I Inactivo			
+	[CodTaller]         int				NOT NULL,
+	[USER_CODE]         int				,
+	FOREIGN KEY([USER_CODE]) REFERENCES [tb_usuario]([USER_CODE]),
+	FOREIGN KEY([CodTaller]) REFERENCES [tb_taller]([CodTaller]),
+	PRIMARY KEY([CodEmpleado])
+)
+GO
+
+CREATE TABLE [tb_articulo]
+( 
+	[CodArticulo]        int			IDENTITY(1,1) NOT NULL,
+	[DesArticulo]		 nvarchar(254)	NOT NULL,
+	[ArtInventariable]   nvarchar(1)    NOT NULL, --A Articulo - S Servicio
+	[TipoServicio]		 nvarchar(1)    NOT NULL, --N Ninguno, R Reparación, M Mantenimiento
+	[UnidadMedida]       nvarchar(40)	,
+	[Fabricante]         nvarchar(254)	,
+	[ImpVenta]			 nvarchar(8)	NOT NULL, --IGV18
+	[Estado]			 nvarchar(1)    NOT NULL, --A Activo - I Inactivo		
+	PRIMARY KEY([CodArticulo])
+)
+GO
+
+CREATE TABLE [tb_articulo_taller]
+(
+	[CodArticulo]        int			NOT NULL,
+	[CodTaller]			 int			NOT NULL,
+	[Stock]				 int            NOT NULL,
+	FOREIGN KEY([CodArticulo]) REFERENCES [tb_articulo]([CodArticulo]),
+	FOREIGN KEY([CodTaller]) REFERENCES [tb_taller]([CodTaller]),
+)
+GO
+
+CREATE TABLE [tb_socio_de_negocio]
+( 
+	[CodSN]				 int			IDENTITY(1,1) NOT NULL,
+	[RazonSocial]        nvarchar(100)	NOT NULL,
+	[NumIdent]			 nvarchar(32)   NOT NULL,
+	[PersonaContacto]    nvarchar(100)  ,
+	[Telefono]			 nvarchar(32)   ,
+	[Email]				 nvarchar(100)  NOT NULL,
+	[Direccion]			 nvarchar(254)  ,
+	[Estado]			 nvarchar(1)     NOT NULL, --A Activo - I Inactivo	
+	[USER_CODE]         int				,
+	FOREIGN KEY([USER_CODE]) REFERENCES [tb_usuario]([USER_CODE]),
+	PRIMARY KEY([CodSN])
+)
+GO
+
+CREATE TABLE [tb_vehiculo] 
+(
+    [CodVehiculo]		 int			IDENTITY(1,1) NOT NULL,
+	[Placa]				 nvarchar(7)	NOT NULL,
+    [Marca]				 nvarchar(32)   ,
+    [Modelo]			 nvarchar(100)	,
+    [Año]				 nvarchar(4)	,
+    [FecUltMant]		 datetime		,
+	[CodSN]				 int			NOT NULL,
+    FOREIGN KEY ([CodSN]) REFERENCES [tb_socio_de_negocio]([CodSN]),
+	PRIMARY KEY([CodVehiculo])
+)
+GO
+
+/**-----------------------------------DATOS TRANSACCIONALES-----------------------------------**/
+
+CREATE TABLE [tb_actServicio]
+(
+    [ActID]				 int			IDENTITY(1,1) NOT NULL, 
+	[FecInicio]			 datetime		NOT NULL,	
+	[FecFin]			 datetime		NOT NULL,
+	[CodVehiculo]		 int			NOT NULL,
+	[DetalleReparacion]  nvarchar(254)  NOT NULL,
+	[Estado]			 nvarchar(7)	, --I Iniciado, E En proceso, T Terminado
+    FOREIGN KEY ([CodVehiculo]) REFERENCES [tb_vehiculo]([CodVehiculo]),
+	PRIMARY KEY([ActID])	
+)
+GO
+
+CREATE TABLE [tb_factVenta_cab] 
+(
+    [DocID]				 int			IDENTITY(1,1) NOT NULL,
+	[CodSN]				 int			NOT NULL,
+    [FecDocumento]		 datetime		NOT NULL,	 
+    [FecVencimiento]	 datetime		NOT NULL,
+    [ProxFecMant]		 datetime		NOT NULL,
+    [CondicionPago]		 nvarchar(100)	, 
+	[Moneda]			 nvarchar(3)	NOT NULL,
+	[NumSerieFiscal]	 nvarchar(4)	NOT NULL,
+	[NumCorrelativo]	 nvarchar(8)	NOT NULL,	 
+    [Comentarios]		 nvarchar(254)  ,
+	[DocTotal]			 numeric(19,6)  NOT NULL,
+	[CodEmpleado]		 int			NOT NULL,
+	[ActID]				 int			NOT NULL,
+    FOREIGN KEY([CodEmpleado]) REFERENCES [tb_empleado]([CodEmpleado]),
+    FOREIGN KEY([CodSN]) REFERENCES [tb_socio_de_negocio]([CodSN]),
+    FOREIGN KEY([ActID]) REFERENCES [tb_actServicio]([ActID]),
+	PRIMARY KEY([DocID])
+)
+GO
+
+CREATE TABLE [tb_factVenta_det] 
+(
+    [DocID]				 int			NOT NULL,
+	[NumLinea]			 int			NOT NULL,
+	[CodArticulo]        int			NOT NULL,
+	[Cantidad]			 int			NOT NULL,
+	[Precio]			 numeric(19,6)  NOT NULL,
+	[Subtotal]			 numeric(19,6)  NOT NULL,
+	FOREIGN KEY([DocID]) REFERENCES [tb_factVenta_cab]([DocID]),
+    FOREIGN KEY([CodArticulo]) REFERENCES [tb_articulo]([CodArticulo]),
+)
+GO
+
+
+
