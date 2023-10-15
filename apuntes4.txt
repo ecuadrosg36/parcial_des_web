@@ -1,0 +1,81 @@
+User
+User
+detallame paso a paso: Caso 02: Web API con Scaffolding – Country (4.5 puntos)
+Mediante el enfoque Database First deberá crear en SQL Server una base de datos
+llamada DPA202302ParcialCaso02Codigo (donde Código es su código de alumno
+correspondiente) en la cual tendrá una tabla llamada “Country” con las siguientes
+columnas: Id, Description, Code, Currency (Según su criterio, considere el tipo de dato
+para cada columna de la tabla).
+Genere un proyecto en ASP.NET Core Web API con NET 7 en C#, utilice el ScaffoldDBContext para el mapeo de la base de datos en su aplicación. Por último, considere
+el uso del Scaffolding para la generación sobre un Controller llamado
+“CountryController.cs”, este deberá autogenerar el código correspondiente al
+controlador con todos los endpoints (CRUD). Finalmente, suba su proyecto a Github
+y el link de repositorio será parte del archivo a subir (incluyendo su código fuente en
+formato comprimido ZIP, RAR, ETC   USAR PARA VISUALSTUDIO 2022
+ChatGPT
+¡Claro! A continuación se presenta una guía paso a paso para el Caso 02 con Visual Studio 2022, creando una Web API con Scaffolding – Country:
+
+Paso 1: Crear la Base de Datos en SQL Server
+Base de Datos:
+
+sql
+Copy code
+CREATE DATABASE DPA202302ParcialCaso02[Codigo];
+(Reemplace [Codigo] con su código de alumno).
+
+Crear Tabla “Country”:
+
+sql
+Copy code
+USE DPA202302ParcialCaso02[Codigo];
+
+CREATE TABLE Country (
+   Id INT PRIMARY KEY IDENTITY(1,1),
+   Description NVARCHAR(100),
+   Code NVARCHAR(10),
+   Currency NVARCHAR(50)
+);
+Ajuste los tipos de datos si es necesario.
+
+Paso 2: Crear Proyecto ASP.NET Core Web API en Visual Studio 2022
+Inicie Visual Studio 2022 y seleccione "Crear un nuevo proyecto".
+Busque y seleccione "ASP.NET Core Web API" y haga clic en "Siguiente".
+Asigne un nombre al proyecto y configure la ubicación, luego haga clic en "Siguiente".
+En "Configurar su nuevo proyecto", elija ".NET 7" como framework y haga clic en "Crear".
+(Opcional) Configure Git durante la creación del proyecto seleccionando "Control de Código Fuente" -> "Git".
+Paso 3: Instalar Paquetes NuGet y Conectar la Base de Datos
+Vaya al "Explorador de Soluciones", haga clic con el botón derecho sobre el proyecto y seleccione "Administrar paquetes NuGet".
+Instale o asegúrese de tener los siguientes paquetes:
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
+Microsoft.VisualStudio.Web.CodeGeneration.Design
+Paso 4: Scaffolding del DbContext
+En "Explorador de Soluciones", haga clic con el botón derecho sobre el proyecto y seleccione "Consola del Administrador de Paquetes".
+Ejecute el siguiente comando de Scaffold:
+shell
+Copy code
+Scaffold-DbContext "Your_Connection_String" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+(Reemplace "Your_Connection_String" con su cadena de conexión).
+Paso 5: Generar Controller con Scaffolding
+En "Explorador de Soluciones", haga clic con el botón derecho sobre la carpeta "Controllers" y seleccione "Agregar" -> "Controlador".
+Elija "Controlador API de operaciones CRUD de Entity Framework" y haga clic en "Agregar".
+Seleccione "Modelo" como "Country" y el "Contexto de datos" como el contexto generado, y nombre el controlador como "CountryController".
+Haga clic en "Agregar" y Visual Studio generará el controlador con operaciones CRUD.
+Paso 6: Verificar Endpoints
+Ejecute su aplicación y use Postman o Swagger (si está configurado) para verificar que los endpoints funcionen correctamente.
+Paso 7: Subir Proyecto a GitHub y Preparar Entregable
+Si no configuró Git durante la creación del proyecto, hágalo ahora inicializando un repositorio, haciendo el primer commit y conectándolo con un repositorio remoto en GitHub.
+shell
+Copy code
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin [URL_Repo_GitHub]
+git push -u origin master
+(Reemplace [URL_Repo_GitHub] con la URL de su nuevo repositorio en GitHub).
+Comprima su proyecto y junto con el enlace al repositorio GitHub, suba los archivos como se indica en las instrucciones de su curso.
+¡Eso es básicamente todo para este caso! Por supuesto, durante el desarrollo, asegúrese de seguir las mejores prácticas, como manejar excepciones y validar la entrada del usuario en su API.
+
+
+
+
