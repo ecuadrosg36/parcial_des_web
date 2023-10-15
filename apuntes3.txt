@@ -1,0 +1,215 @@
+C:\Users\laboratorioesan\source\repos
+
+Disfruta de un adelanto de ChatGPT en tu lengua.
+Unirse a la alpha
+
+
+
+
+GPT-4
+
+User
+detallame paso a paso: Caso 02: Web API con Scaffolding – Country (4.5 puntos)
+Mediante el enfoque Database First deberá crear en SQL Server una base de datos
+llamada DPA202302ParcialCaso02Codigo (donde Código es su código de alumno
+correspondiente) en la cual tendrá una tabla llamada “Country” con las siguientes
+columnas: Id, Description, Code, Currency (Según su criterio, considere el tipo de dato
+para cada columna de la tabla).
+Genere un proyecto en ASP.NET Core Web API con NET 7 en C#, utilice el ScaffoldDBContext para el mapeo de la base de datos en su aplicación. Por último, considere
+el uso del Scaffolding para la generación sobre un Controller llamado
+“CountryController.cs”, este deberá autogenerar el código correspondiente al
+controlador con todos los endpoints (CRUD). Finalmente, suba su proyecto a Github
+y el link de repositorio será parte del archivo a subir (incluyendo su código fuente en
+formato comprimido ZIP, RAR, ETC
+ChatGPT
+Paso a Paso: Caso 02: Web API con Scaffolding – Country
+
+Paso 1: Crear Base de Datos y Tabla en SQL Server
+Crear Base de Datos:
+
+sql
+Copy code
+CREATE DATABASE DPA202302ParcialCaso02[Codigo];
+Nota: Sustituya [Codigo] con su código de alumno.
+
+Crear Tabla "Country":
+
+sql
+Copy code
+USE DPA202302ParcialCaso02[Codigo];
+
+CREATE TABLE Country (
+   Id INT PRIMARY KEY IDENTITY(1,1),
+   Description NVARCHAR(100),
+   Code NVARCHAR(10),
+   Currency NVARCHAR(50)
+);
+Nota: Ajuste los tipos de datos si es necesario.
+
+Paso 2: Crear Proyecto ASP.NET Core Web API en C#
+Utilice Visual Studio o un IDE de su preferencia.
+Cree un nuevo proyecto seleccionando "ASP.NET Core Web API" y utilice ".NET 7" como framework.
+Nombre su proyecto acorde a sus lineamientos y configure el repositorio local de Git durante la creación si utiliza Visual Studio.
+Paso 3: Conectar Base de Datos y Crear Modelo
+Instale los paquetes NuGet siguientes:
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
+Microsoft.VisualStudio.Web.CodeGeneration.Design
+Scaffold DBContext:
+En el terminal de su IDE, use el siguiente comando para mapear su base de datos:
+shell
+Copy code
+Scaffold-DbContext "Your_Connection_String" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+Reemplace "Your_Connection_String" con la cadena de conexión a su base de datos.
+Paso 4: Crear Controlador usando Scaffolding
+En la carpeta "Controllers", haga clic derecho y seleccione "Agregar" -> "Controlador".
+Elija "Controlador API de operaciones CRUD de Entity Framework" y haga clic en "Agregar".
+En "Modelo" seleccione "Country" y en "Clase de contexto de datos" seleccione el contexto generado.
+Nombre al controlador como "CountryController".
+Paso 5: Verificar y Probar Endpoints
+Compile y ejecute su aplicación y pruebe los endpoints generados usando herramientas como Postman o Swagger (si lo habilitó en su API).
+Paso 6: Subir el Proyecto a GitHub
+Inicializar repositorio en Git:
+Si no lo hizo durante la creación del proyecto, inicialice un repositorio en Git y realice el primer commit.
+shell
+Copy code
+git init
+git add .
+git commit -m "Initial Commit"
+Crear un Repositorio en GitHub:
+Vaya a GitHub y cree un nuevo repositorio.
+Siga las instrucciones para empujar su repositorio local al remoto.
+Subir Proyecto a GitHub:
+shell
+Copy code
+git remote add origin [URL de su repositorio]
+git push -u origin master
+Reemplace [URL de su repositorio] con la dirección de su nuevo repositorio en GitHub.
+Paso 7: Preparar Archivo para Entrega
+Comprima su proyecto en formato ZIP, RAR, etc.
+En un archivo de texto, escriba el link al repositorio de GitHub.
+Suba ambos, el archivo comprimido y el archivo de texto, según las indicaciones de su curso.
+Nota: Este proceso es genérico y debería ajustarlo según las configuraciones específicas de su entorno y requisitos del curso. También, asegúrese de probar su API y verificar la autenticación/autorización si es necesario para su caso.
+
+
+
+
+User
+Detallame paso a paso: Caso 03: Web API y creación de endpoints – Territory (6 puntos)
+Mediante el enfoque Database First deberá crear en SQL Server una base de datos
+llamada DPA202302ParcialCaso03Codigo (donde Código es su código de alumno
+correspondiente) en la cual tendrá una tabla llamada “Territory” con las siguientes
+columnas: Id, Description, Area, Population(Según su criterio, considere el tipo de dato
+para cada columna de la tabla).
+Desarrollo de ambiente web
+2023-2
+3
+Puede utilizar el mismo proyecto del Caso 02 o generar un nuevo proyecto en
+ASP.NET Core Web API con NET 7 en C#. Luego de mapear las tablas a clases
+deberá crear un Controller en blanco llamado “TerrotoryController.cs”, para este
+controlador se necesitará crear cuatro (4) endpoints que permitan:
+• Registrar nuevos territorios.
+• Actualizar un territorio,
+• Eliminar un territorio.
+• Obtener el listado de todos territorios.
+Finalmente, suba su proyecto a Github y el link de repositorio será parte del archivo a
+subir (incluyendo su código fuente en formato comprimido ZIP, RAR, ETC)
+Nota: En el presente ejercicio NO deberá autogenerar el controlador. Deberá crear
+una clase repositorio para la entidad territory (territoryRepository) y referenciar la
+interfaz del repositorio en el controller. NO es obligatorio crear 3 proyectos (Web API,
+Core, Infrastructure). Puede desarrollar todo esto desde el proyecto Web API y crear
+carpetas que crear conveniente.
+ChatGPT
+Paso a Paso: Caso 03: Web API y Creación de Endpoints – Territory
+
+Paso 1: Creación de la Base de Datos y Tabla en SQL Server
+Base de Datos:
+
+sql
+Copy code
+CREATE DATABASE DPA202302ParcialCaso03[Codigo];
+(Reemplace [Codigo] con su código de alumno).
+
+Crear Tabla "Territory":
+
+sql
+Copy code
+USE DPA202302ParcialCaso03[Codigo];
+
+CREATE TABLE Territory (
+   Id INT PRIMARY KEY IDENTITY(1,1),
+   Description NVARCHAR(150),
+   Area FLOAT,
+   Population INT
+);
+Ajuste los tipos de datos si es necesario.
+
+Paso 2: Preparación del Proyecto ASP.NET Core Web API
+Puede utilizar el mismo proyecto del Caso 02 o crear uno nuevo con ".NET 7" como framework.
+Paso 3: Conexión con la Base de Datos y Creación de Modelo
+Siga los pasos de Scaffold del Caso 02 para mapear su nueva tabla a una clase en el proyecto de la API.
+Paso 4: Crear Repositorio para la Entidad Territory
+Crear Interfaz del Repositorio:
+En una carpeta llamada "Repositories", cree una interfaz llamada ITerritoryRepository.
+csharp
+Copy code
+public interface ITerritoryRepository
+{
+    Task<IEnumerable<Territory>> GetTerritories();
+    Task<Territory> GetTerritory(int id);
+    Task<Territory> AddTerritory(Territory territory);
+    Task<Territory> UpdateTerritory(Territory territory);
+    Task<Territory> DeleteTerritory(int id);
+}
+Implementar Repositorio:
+En esa misma carpeta, cree una clase llamada TerritoryRepository e implemente la interfaz.
+csharp
+Copy code
+public class TerritoryRepository : ITerritoryRepository
+{
+    private readonly YourDbContext _context;
+    // Implementación de los métodos...
+}
+Implemente cada método considerando las operaciones CRUD básicas.
+Paso 5: Crear Controlador Territory
+En la carpeta "Controllers", cree un archivo llamado TerritoryController.cs.
+Cree los 4 endpoints especificados, haciendo uso del repositorio que ha creado.
+Ejemplo para el endpoint de agregar un nuevo territorio:
+csharp
+Copy code
+[ApiController]
+[Route("api/[controller]")]
+public class TerritoryController : ControllerBase
+{
+    private readonly ITerritoryRepository _repository;
+
+    public TerritoryController(ITerritoryRepository repository)
+    {
+        _repository = repository;
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> AddTerritory(Territory territory)
+    {
+        var addedTerritory = await _repository.AddTerritory(territory);
+        return CreatedAtAction(nameof(AddTerritory), new { id = addedTerritory.Id }, addedTerritory);
+    }
+    // Implementar los demás endpoints aquí...
+}
+Paso 6: Pruebas
+Pruebe los endpoints utilizando Postman o Swagger para asegurarse de que estén funcionando como se espera.
+Paso 7: Subida a GitHub y Preparación de Entregables
+Siga los pasos de subida a GitHub del Caso 02.
+Comprima su código en un formato permitido y prepare un archivo de texto con el link al repositorio de GitHub.
+Entregue los archivos según las indicaciones de su curso.
+Nota: Asegúrese de manejar las excepciones y validar los datos de entrada en sus endpoints para garantizar la robustez de su API. Además, puede ser útil agregar comentarios para explicar su código donde lo considere necesario.
+
+
+
+
+User
+5. Un ORM permite el mapeo de tablas a clases facilitando la gestión de datos. ( ) es verdadero o falso
+ChatGPT
+Verdadero.
+
+Un ORM (Object-Relational Mapping) permite el mapeo de tablas en una base de datos a clases en un lenguaje de programación, facilitando la gestión de datos. A través de un ORM, se pueden realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en una base de datos utilizando el paradigma de programación orientada a objetos en lugar de escribir consultas SQL. Esto puede ayudar a mejorar la productividad, ya que los desarrolladores pueden trabajar con una abstracción más cercana a su modelo de dominio en lugar de manipular directamente las tablas y consultas de la base de datos. Ejemplos de ORM incluyen Entity Framework en el mundo .NET, Hibernate en Java, y Sequelize para Node.js.
